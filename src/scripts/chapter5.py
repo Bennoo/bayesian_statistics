@@ -1,3 +1,5 @@
+import utils
+import os
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy.stats import beta
@@ -17,4 +19,4 @@ print(f'Probability that the return is more than 0.5 is {value_more}')
 # Plot the Beta distribution
 x = np.linspace(0, 1, 1000)
 plt.plot(x, beta.pdf(x, a, b))
-plt.savefig('pdf.png')
+plt.savefig(os.path.join(utils.get_output_path(__file__), 'pdf.png'))

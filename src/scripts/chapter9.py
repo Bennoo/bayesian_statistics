@@ -1,3 +1,5 @@
+import os
+import utils
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy.stats import beta
@@ -48,7 +50,7 @@ results2_diff = beta.sf(x=p, a=ac, b=bc)[0] - beta.sf(x=p, a=ac, b=bc)[1]
 # Plot the posterior Beta distribution
 x = np.linspace(0, 1, 1000)
 plt.plot(x, beta.pdf(x, ac, bc))
-plt.savefig('chapter9Ex2pdf.png')
+plt.savefig(os.path.join(utils.get_output_path(__file__), 'chapter9Ex2pdf.png'))
 
 print(f'probability for the coin to be fair regarding experiment and a strong prior:{results2_diff}')
 

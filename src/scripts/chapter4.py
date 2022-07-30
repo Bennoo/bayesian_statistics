@@ -1,3 +1,5 @@
+import utils
+import os
 import math
 # n choose k
 print('10 choose 5, avec un tirage de 10, combien contiennent 5 cas positifs?')
@@ -15,6 +17,6 @@ r= list(range(n + 1))
 
 #calling the binom.pmf function and printing its return value
 return_val=binom.pmf(r, n, p)
-
 plt.bar(r, return_val)
-plt.savefig('pmf.png')
+
+plt.savefig(os.path.join(utils.get_output_path(__file__), 'graph.png'))
