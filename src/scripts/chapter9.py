@@ -21,7 +21,7 @@ p = [0.4, 0.6] #proba before 0.4 and proba before 0.6 (to get between, make the 
 results = beta.sf(x=p, a=a, b=b)
 results_diff = beta.sf(x=p, a=a, b=b)[0] - beta.sf(x=p, a=a, b=b)[1]
 
-# Plot the Beta distribution
+# Plot the Beta distribution,
 x = np.linspace(0, 1, 1000)
 plt.plot(x, beta.pdf(x, a, b))
 
